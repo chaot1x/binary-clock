@@ -169,7 +169,7 @@
         this.timer = setInterval(this.update.bind(this), 500);
     };
 
-    BinaryClock.prototype.stop = function() {
+    BinaryClock.prototype.stop = function () {
         clearInterval(this.timer);
     };
 
@@ -274,17 +274,11 @@
     };
 
     BinaryClock.prototype.binaryWrapper = function () {
-        var $html = '<div class="binary-row">' +
+        return '<div class="binary-row">' +
             this.hoursWrapper() +
-            this.minutesWrapper();
-
-            if (this.defaults.showBinarySeconds === true) {
-                $html += this.secondsWrapper();
-            }
-
-        $html += '</div>';
-
-        return $html;
+            this.minutesWrapper() +
+            (this.defaults.showBinarySeconds === true ? this.secondsWrapper() : '') +
+            '</div>';
     };
 
     BinaryClock.prototype.dateWrapper = function () {

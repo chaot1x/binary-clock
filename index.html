@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="lv">
+    <head>
+        <meta charset="UTF-8">
+        <title>Binary Clock</title>
+        <link rel="stylesheet" href="assets/css/clock.css">
+    </head>
+    <body>
+        <div id="clock"></div>
+        <script type="text/javascript" src="assets/js/clock.js"></script>
+        <script type="text/javascript">
+            window.addEventListener('load', function() {
+                var clock = new BinaryClock("clock", {
+                    lang: document.getElementsByTagName('html')[0].getAttribute('lang'),
+                    dateFormat: {
+                        lv: '%date% %month%, %year%'
+                    },
+                    translations: {
+                        lv: {
+                            weekdays: {
+                                0: 'Svētdiena',
+                                1: 'Pirmdiena',
+                                2: 'Otrdiena',
+                                3: 'Trešdiena',
+                                4: 'Ceturtdiena',
+                                5: 'Piektdiena',
+                                6: 'Sestdiena'
+                            },
+                            months: {
+                                0: 'Janvāris',
+                                1: 'Februāris',
+                                2: 'Marts',
+                                3: 'Aprīlis',
+                                4: 'Maijs',
+                                5: 'Jūnijs',
+                                6: 'Jūlijs',
+                                7: 'Augusts',
+                                8: 'Septembris',
+                                9: 'Oktobris',
+                                10: 'Novembris',
+                                11: 'Decembris'
+                            },
+                            dateSuffix: {
+                                st: '.',
+                                nd: '.',
+                                rd: '.',
+                                th: '.'
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

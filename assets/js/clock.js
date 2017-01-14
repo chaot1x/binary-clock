@@ -141,7 +141,7 @@
             if (this.defaults.showDate === true) {
                 var $dateFormat = this.defaults.dateFormat[this.defaults.lang];
                 $dateRow.getElementsByClassName('date')[0].innerHTML = this.sprintf($dateFormat, {
-                    date: this.ordinalSuffix($date),
+                    date: (this.defaults.dateSuffix === true ? this.ordinalSuffix($date) : $date),
                     month: this.__('months.' + $month),
                     year: $year
                 });
